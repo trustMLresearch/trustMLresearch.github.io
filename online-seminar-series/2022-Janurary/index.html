@@ -182,6 +182,12 @@ jQuery('.da-thumbs a[rel!="easymedia"]').attr('rel', function (i, old) {
 	  temp += ((minute < 10) ? ':0' : ':') + minute;
 	  return temp;
 	}
+
+	function displayMonth(dt) {
+	  var Month = dt.getMonth()+1;
+	  var temp = '' + ((Month < 10) ? '0' : '') + Month;
+	  return temp;
+	}
 	
 	function writeTimeRange(year, month, date, startHour, startMin, endHour, endMin) {
 
@@ -198,9 +204,17 @@ jQuery('.da-thumbs a[rel!="easymedia"]').attr('rel', function (i, old) {
 	  var oneHour = oneMin * 60;
 	  var startTime = new Date(myRefTime.getTime() + startHour * oneHour + startMin * oneMin);
 	  var endTime = new Date(myRefTime.getTime() + endHour * oneHour + endMin * oneMin);
+	  var ext = new Date("2019-4-19 21:00:00 GMT")
 	  document.write(displayTime(startTime));
 	  document.write("-");
 	  document.write(displayTime(endTime));
+	  document.write(" ");
+	  document.write(myStartTime.getDate());
+	  document.write("/");
+	  document.write(displayMonth(myStartTime));
+	  document.write("/");
+	  document.write("2022");
+
 	  if (endTime.getDay() != myStartTime.getDay()) {
 		document.write(" (next day)");
 	  }
