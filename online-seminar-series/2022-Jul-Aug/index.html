@@ -191,20 +191,31 @@ jQuery('.da-thumbs a[rel!="easymedia"]').attr('rel', function (i, old) {
 	
 	function writeTimeRange(year, month, date, startHour, startMin, endHour, endMin) {
 
-		
-		
+
+
 		var myTimeZone = "+09:00"
 		var myDate = year+'-'+((month < 10) ? '0' : '')+month+'-'+((date < 10) ? '0' : '')+date+'T'
 		var myStartTime = startHour+":"+((startMin<10)? '0':'')+startMin
-		
+
+
+
+		var auxtime = startHour+":"+((startMin<10)? '0':'')+startMin
+
 		var myStartTime = new Date(myDate + myStartTime + ":00.000" + myTimeZone);
+
 		var myRefTime = new Date(myDate + "00:00:00.000" + myTimeZone);
+
 
 	  var oneMin = 1000 * 60;
 	  var oneHour = oneMin * 60;
 	  var startTime = new Date(myRefTime.getTime() + startHour * oneHour + startMin * oneMin);
 	  var endTime = new Date(myRefTime.getTime() + endHour * oneHour + endMin * oneMin);
 	  var ext = new Date("2019-4-19 21:00:00 GMT")
+
+	  if (endTime.getDay() != myStartTime.getDay()) {
+		var myStartTime = new Date(myDate + "10:00" + ":00.000" + "+09:00");
+	  }
+
 	  document.write(displayTime(startTime));
 	  document.write("-");
 	  document.write(displayTime(endTime));
