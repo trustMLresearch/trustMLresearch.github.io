@@ -8,12 +8,12 @@
 
 	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>May-Jun 2022 : TrustML Young Scientist Seminars</title>
+	<title>Mar-Apr 2023 : TrustML Young Scientist Seminars</title>
 	<link rel="canonical" href="index.html" />
 	<meta property="og:locale" content="en_GB" />
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content="May-Jun 2022 : TrustML Young Scientist Seminars" />
-	<meta property="og:description" content="May-Jun 2022 : TrustML Young Scientist Seminars" />
+	<meta property="og:title" content="Mar-Apr 2023 : TrustML Young Scientist Seminars" />
+	<meta property="og:description" content="Mar-Apr 2023 : TrustML Young Scientist Seminars" />
 	<meta property="og:url" content="index.html" />
 	<meta property="og:site_name" content="TrustML Young Scientist Seminars" />
 	<meta property="article:modified_time" content="2021-12-22" />
@@ -76,7 +76,7 @@ img.emoji {
 	window._wp_rp_post_id = '852';
 	window._wp_rp_num_rel_posts = '6';
 	window._wp_rp_thumbnails = true;
-	window._wp_rp_post_title = '2022+January';
+	window._wp_rp_post_title = '2023+January';
 	window._wp_rp_post_tags = [];
 	window._wp_rp_promoted_content = true;
 </script>
@@ -191,20 +191,31 @@ jQuery('.da-thumbs a[rel!="easymedia"]').attr('rel', function (i, old) {
 	
 	function writeTimeRange(year, month, date, startHour, startMin, endHour, endMin) {
 
-		
-		
+
+
 		var myTimeZone = "+09:00"
 		var myDate = year+'-'+((month < 10) ? '0' : '')+month+'-'+((date < 10) ? '0' : '')+date+'T'
 		var myStartTime = startHour+":"+((startMin<10)? '0':'')+startMin
-		
+
+
+
+		var auxtime = startHour+":"+((startMin<10)? '0':'')+startMin
+
 		var myStartTime = new Date(myDate + myStartTime + ":00.000" + myTimeZone);
+
 		var myRefTime = new Date(myDate + "00:00:00.000" + myTimeZone);
+
 
 	  var oneMin = 1000 * 60;
 	  var oneHour = oneMin * 60;
 	  var startTime = new Date(myRefTime.getTime() + startHour * oneHour + startMin * oneMin);
 	  var endTime = new Date(myRefTime.getTime() + endHour * oneHour + endMin * oneMin);
 	  var ext = new Date("2019-4-19 21:00:00 GMT")
+
+	  if (endTime.getDay() != myStartTime.getDay()) {
+		var myStartTime = new Date(myDate + "10:00" + ":00.000" + "+09:00");
+	  }
+
 	  document.write(displayTime(startTime));
 	  document.write("-");
 	  document.write(displayTime(endTime));
@@ -213,7 +224,7 @@ jQuery('.da-thumbs a[rel!="easymedia"]').attr('rel', function (i, old) {
 	  document.write("/");
 	  document.write(displayMonth(myStartTime));
 	  document.write("/");
-	  document.write("2022");
+	  document.write("2023");
 
 	  if (endTime.getDay() != myStartTime.getDay()) {
 		document.write(" (next day)");
@@ -232,8 +243,8 @@ jQuery('.da-thumbs a[rel!="easymedia"]').attr('rel', function (i, old) {
 </style></head>
 
 <body data-rsssl=1 class="page-template-default page page-id-852 page-child parent-pageid-1172 wp-embed-responsive tribe-no-js trust-theme dropdown-mobile default-breakpoint content-full-width content-max-width has-topbar" itemscope="itemscope" itemtype="https://schema.org/WebPage">
-
 	
+	        
 	<div id="outer-wrap" class="site clr">
 
 		<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
@@ -421,7 +432,6 @@ jQuery('.da-thumbs a[rel!="easymedia"]').attr('rel', function (i, old) {
 </div>
 
 </header><!-- #site-header -->
-
 			
 			<main id="main" class="site-main clr"  role="main">
 
@@ -463,7 +473,7 @@ jQuery('.da-thumbs a[rel!="easymedia"]').attr('rel', function (i, old) {
 
 	
 	
-<p><font size='4'>Timetable for the TrustML YSS online seminars from Mar. to Apr., 2023.</font></p>
+<p><font size='4'>Timetable for the TrustML YSS online seminars from Jan. to Feb., 2023.</font></p>
 
 
 
@@ -472,11 +482,14 @@ jQuery('.da-thumbs a[rel!="easymedia"]').attr('rel', function (i, old) {
 
 
 <figure class="wp-block-table alignwide is-style-stripes"><table><tbody><tr bgcolor="#C0C0C0"><td style="text-align:center"><strong>Time (JST)</strong></td><td style="text-align:center"><strong>Time (Your Browser)</strong></td><td style="text-align:center"><strong>Title</strong></td><td style="text-align:center"><strong>Speaker </strong> </td><td style="text-align:center"><strong>Video Link</strong></td></tr>
-	
+
 	<tr></tr>
 
+	
 
-	<tr>
+
+
+    <tr>
 		<td style="text-align:center"><br>11:00-12:00 03/03/2023<br></td>
 		<!--<td style="text-align:center"><a href="javascript:void(0)" target="_blank" rel="noreferrer noopener" aria-label="￼ (opens in a new tab)"><img loading="lazy" width="200" height="200" class="wp-image-688" style="width: 100px" src="../../pic/tbd.png" alt="" srcset="../../pic/tbd.png 1800w, ../../pic/tbd.png 300w, ../../pic/tbd.png 768w, ../../pic/tbd.png 1024w" sizes="(max-width: 200px) 100vw, 200px" /></a></td>-->
 		<td style="text-align:center"><br><script>writeTimeRange(2023, 03, 03, 11, 00, 12, 00);</script><br></td>
@@ -533,6 +546,7 @@ jQuery('.da-thumbs a[rel!="easymedia"]').attr('rel', function (i, old) {
 	</tr>
 
 </tbody></table></figure>
+
 
 	<!--<p><font size='4'>For online seminar, please attend via Zoom <a href="https://zoom.us/j/95181287857?pwd=Tm5na2lYbDhYUml2dU9laUJBQ0hGZz09">[Link]</a>.</font></p>-->
 
