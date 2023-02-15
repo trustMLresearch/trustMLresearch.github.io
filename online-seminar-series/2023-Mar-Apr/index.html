@@ -183,9 +183,9 @@ jQuery('.da-thumbs a[rel!="easymedia"]').attr('rel', function (i, old) {
 	  return temp;
 	}
 
-    function displayDay(dt) {
-	  var Day = dt.getDay()+1;
-	  var temp = '' + ((Day < 10) ? '0' : '') + Month;
+    function displayDate(dt) {
+	  var Date = dt.getDate();
+	  var temp = '' + ((Date < 10) ? '0' : '') + Date;
 	  return temp;
 	}
 
@@ -226,7 +226,7 @@ jQuery('.da-thumbs a[rel!="easymedia"]').attr('rel', function (i, old) {
 	  document.write("-");
 	  document.write(displayTime(endTime));
 	  document.write(" ");
-	  document.write(displayDay(myStartTime));
+	  document.write(displayDate(myStartTime));
 	  document.write("/");
 	  document.write(displayMonth(myStartTime));
 	  document.write("/");
