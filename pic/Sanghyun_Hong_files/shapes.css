@@ -1,0 +1,19 @@
+/*
+ *  Image shape: for the profile picture
+ */
+.dodeca, .dodeca div {
+  margin: 0 auto;
+  transform-origin: 50% 50%;
+  overflow: hidden;
+  width: 240px;
+  height: 240px;
+}
+.dodeca {
+  transform: rotate(120deg);
+}
+.dode1 {
+  transform: rotate(-60deg);
+}
+.dode2 {
+  transform: rotate(-60deg);
+}

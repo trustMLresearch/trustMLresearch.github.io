@@ -1,0 +1,90 @@
+/*
+ *  Customize the website styles, working with Bootsrap 4
+ */
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+
+footer {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.btn-xs {
+    padding: 4px 6px 4px 6px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.navbar-fixed-top .nav {
+    padding: 15px 0;
+}
+
+.navbar-fixed-top .navbar-brand {
+    padding: 0 15px;
+}
+
+/*
+ *  Button for scroll-ups: size-ups
+ */
+#topBtn {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  font-size: 32px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  /* colors */
+  color: #333333;
+  background-color: rgba(255, 255, 255, .84);
+  /* position */
+  bottom: 20px;
+  right: 20px;
+  /* paddings */
+  padding-top: 2px;
+  padding-right: 14px;
+  padding-bottom: 2px;
+  padding-left: 14px;
+}
+
+#topBtn:hover {
+  background-color: rgba(242, 242, 242, .84);
+}
+
+/*
+ *  Position-updates for various screens
+ */
+@media(min-width:768px) {
+    body {
+        padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    }
+
+    .navbar-fixed-top .navbar-brand {
+        padding: 10px 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1050px;
+    }
+}
+
+/*
+ *  Profile photos
+ */
+.profile {
+    background-image: url('../resources/shhong_profile.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.profile:hover {
+    background-image: url('../resources/shhong_profile_cloaked.png');
+}
+
+.profile:hover .overlay {
+    background: rgba(251, 251, 251, 0.10);
+}

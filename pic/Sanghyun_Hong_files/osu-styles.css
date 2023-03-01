@@ -1,0 +1,121 @@
+/*
+ * 
+ *  Oregon State University Styles:
+ *  This will override the bootstrap's definitions.
+ *
+ */
+body {
+    /* font-family: KievitOffc; */
+    font-size: 16px;
+    position: relative;
+    margin-top: 10px;
+}
+
+
+/* 
+ *  Headers (Text)
+ */
+h1 {
+    font-family: Stratum2-Bold;
+    margin-top: 40px;
+}
+
+h2 {
+    font-family: Stratum2-Bold;
+    margin-top: 40px;
+}
+
+h3 {
+    font-family: Stratum2-Bold;
+    margin-top: 24px;
+}
+
+h4 {
+    font-family: Stratum2-Bold;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+h5 {
+    /* font-family: Stratum2-Bold; */
+    font-family: Stratum2;
+    margin-top: 10px;
+}
+
+h6 {
+    font-family: Stratum2-Bold;
+    /* margin-top: 10px; */
+}
+
+footer {
+    margin: 30px;
+}
+
+/* 
+ *  Navigation Bar
+ */      
+.navbar {
+    box-shadow: 0 6px 6px -6px #999;
+}
+
+.navbar a {
+    color: #000000 !important;
+}
+
+.navbar .active {
+    color: #D73F09 !important;
+}
+
+.navbar .disabled {
+    color: #59626A !important;
+}
+
+.navbar a:hover {
+    color: #D73F09 !important;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: #000000;
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+
+/* 
+ *  Hyperlink
+ */
+a {
+    color: #006A8E;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: #59626A;
+}
+
+/* 
+ *  Table
+ */
+table td, table td * {
+    vertical-align: top;
+}
+
+table.table tbody tr td,
+table.table thead tr th,
+table.table thead {
+    border-top: 1px solid #003B5C;
+    border-left: 1px solid #003B5C;
+    border-right: 1px solid #003B5C;
+    border-bottom: 1px solid #003B5C;
+}
+
+/* 
+ *  [Custom] tab
+ */
+.tab {
+    display: inline-block;
+    margin-left: 21px;
+}
