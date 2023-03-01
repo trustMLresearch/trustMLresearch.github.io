@@ -1,0 +1,65 @@
+/*
+ * 
+ *  The Oregon State Brand
+ *  (https://communications.oregonstate.edu/brand-guide/visual-identity/typography)
+ *
+ */
+@font-face {
+    font-family: 'Stratum2-Black';
+    src: url('../resources/osu-fonts/Stratum2-Black.otf');
+}
+
+@font-face {
+    font-family: 'Stratum2-Bold';
+    src: url('../resources/osu-fonts/Stratum2-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Stratum2-Light';
+    src: url('/resources/osu-fonts/Stratum2-Light.otf');
+}
+
+@font-face {
+    font-family: 'Stratum2-Medium';
+    src: url('/resources/osu-fonts/Stratum2-Medium.otf');
+}
+
+@font-face {
+    font-family: 'Stratum2-Regular';
+    src: url('../resources/osu-fonts/Stratum2-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Stratum2-Thin';
+    src: url('../resources/osu-fonts/Stratum2-Thin.otf');
+}
+
+@font-face {
+    font-family: 'KievitOffc';
+    src: url('../resources/osu-fonts/KievitOffc.ttf');
+}
+
+@font-face {
+    font-family: 'KievitOffc-Bold';
+    src: url('../resources/osu-fonts/KievitOffc-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'KievitOffc-BoldIta';
+    src: url('../resources/osu-fonts/KievitOffc-BoldIta.ttf');
+}
+
+@font-face {
+    font-family: 'KievitOffc-Ita';
+    src: url('../resources/osu-fonts/KievitOffc-Ita.ttf');
+}
+
+@font-face {
+    font-family: 'KievitOffc-Medi';
+    src: url('../resources/osu-fonts/KievitOffc-Medi.ttf');
+}
+
+@font-face {
+    font-family: 'KievitOffc-MediIta';
+    src: url('../resources/osu-fonts/KievitOffc-MediIta.ttf');
+}
