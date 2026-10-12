@@ -4,6 +4,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Load presentation before the page content can paint. -->
+<style>html.site-loading #page-content { visibility: hidden; }</style>
+<script>
+(function () {
+    document.documentElement.classList.add('site-loading');
+    window.siteLoadingGuard = setTimeout(function () { document.documentElement.classList.remove('site-loading'); }, 8000);
+    var reload = performance.getEntriesByType('navigation')[0];
+    if (/^https?:$/.test(location.protocol) && (!reload || reload.type !== 'reload')) {
+        ["../../common/layout.html", "../../common/menu.html", "../../common/years.html"].forEach(function (url) {
+            var link = document.createElement('link');
+            link.rel = 'preload'; link.as = 'fetch'; link.crossOrigin = 'anonymous'; link.href = url;
+            document.head.appendChild(link);
+        });
+    }
+})();
+</script>
+<link rel="stylesheet" href="../../wp-content/themes/assets/fonts/fontawesome/css/all.min9e0b.css?ver=5.15.1">
+<link rel="stylesheet" href="../../wp-content/themes/assets/css/third/simple-line-icons.min8d5a.css?ver=2.4.0">
+<link rel="stylesheet" href="../../wp-content/themes/assets/css/style.min0226.css?ver=3.1.2">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script src="../../assets/js/site.js?ver=html-components-3" defer></script>
+
 <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 <title>May-Jun 2022 : TrustML Young Scientist Seminars</title>
 <link rel="canonical" href="index.html" />
@@ -155,6 +177,5 @@
 </div>
 
 </div>
-<script src="../../assets/js/site.js?ver=html-components-2" defer></script>
 </body>
 </html>

@@ -5,6 +5,26 @@
     const content = document.getElementById('page-content');
     const heading = document.getElementById('page-heading');
     if (!content || !heading) return;
+    const reload = performance.getEntriesByType('navigation')[0]?.type === 'reload';
+
+    function finishLoading() {
+        clearTimeout(window.siteLoadingGuard);
+        document.documentElement.classList.remove('site-loading');
+    }
+
+    function cachedHTML(url) {
+        try { return sessionStorage.getItem('trustml-shared:v3:' + url.href); }
+        catch (error) { return null; }
+    }
+
+    async function fetchHTML(url, refresh) {
+        const response = await fetch(url, { cache: refresh ? 'no-cache' : 'default' });
+        if (!response.ok) throw new Error('Unable to load ' + url.href);
+        const html = await response.text();
+        try { sessionStorage.setItem('trustml-shared:v3:' + url.href, html); }
+        catch (error) { /* Storage may be unavailable; HTTP caching still works. */ }
+        return html;
+    }
 
     function parseHTML(html) {
         const parsed = new DOMParser().parseFromString(html, 'text/html');
@@ -48,9 +68,13 @@
         if (siteRoot.protocol === 'file:') return loadFromFrame(url, false);
         // Used only by the opaque-origin compatibility test, not normal page visits.
         if (new URL(location.href).searchParams.get('testLocalComponents') === '1') return loadFromFrame(url, true);
-        const response = await fetch(url, { cache: 'no-cache' });
-        if (!response.ok) throw new Error('Unable to load ' + url.href);
-        return parseHTML(await response.text());
+        const cached = cachedHTML(url);
+        if (cached && !reload) {
+            // Render immediately; a background check prepares updates for the next page.
+            fetchHTML(url, true).catch(() => {});
+            return parseHTML(cached);
+        }
+        return parseHTML(await fetchHTML(url, reload));
     }
 
     function rootURL(value) {
@@ -120,6 +144,9 @@
         const pending = [];
         for (const element of Array.from(head.children)) {
             if (element.tagName === 'LINK' && element.rel === 'stylesheet') {
+                const existing = Array.from(document.querySelectorAll('link[rel="stylesheet"]')).find(link => link.href === element.href);
+                if (existing?.sheet) continue;
+                if (existing) existing.remove();
                 pending.push(new Promise((resolve, reject) => {
                     element.addEventListener('load', resolve, { once: true });
                     element.addEventListener('error', () => reject(new Error('Unable to load ' + element.href)), { once: true });
@@ -241,6 +268,7 @@
             if (target) target.scrollIntoView();
         }
         document.body.dataset.siteReady = 'true';
+        finishLoading();
     }
 
     start().catch(error => {
@@ -250,5 +278,6 @@
         const notice = document.createElement('p');
         notice.textContent = 'Navigation could not be loaded. Please check that the common and assets folders are present beside this website.';
         content.prepend(title, notice);
+        finishLoading();
     });
 })();

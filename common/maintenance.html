@@ -41,6 +41,7 @@
   <h2>页面标题和样式</h2>
   <p><code>&lt;template id="page-heading"&gt;…&lt;/template&gt;</code> 是页面蓝色横条中的标题。浏览器标签标题仍由 HTML 的 <code>&lt;title&gt;</code> 控制。</p>
   <p>现有样式保存在 <code>assets/css/</code>；加载哪些样式由 <code>common/layout.html</code> 控制。JavaScript 只负责自动加载和菜单交互，日常无需修改。</p>
+  <p>公共框架在换页时复用缓存，以减少等待和排版闪烁。修改并上传公共 HTML 后，刷新页面会检查并加载新版本；无需运行命令或手动清理缓存。</p>
   <h2>预览方式</h2>
   <p>可以直接双击本地 <code>index.html</code> 预览，也可以通过网站的 HTTP/HTTPS 地址查看。公共 HTML 会自动加载，日常不需要启动服务器或运行命令。请保留网站中的 <code>common</code>、<code>assets</code>、<code>wp-content</code> 和 <code>pic</code> 文件夹。</p>
   <p>讲座信息没有集中成数据库，照片文件和图片质量没有修改，两个旧团队链接的跳转也保留。</p>

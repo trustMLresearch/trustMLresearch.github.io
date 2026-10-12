@@ -4,6 +4,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Load presentation before the page content can paint. -->
+<style>html.site-loading #page-content { visibility: hidden; }</style>
+<script>
+(function () {
+    document.documentElement.classList.add('site-loading');
+    window.siteLoadingGuard = setTimeout(function () { document.documentElement.classList.remove('site-loading'); }, 8000);
+    var reload = performance.getEntriesByType('navigation')[0];
+    if (/^https?:$/.test(location.protocol) && (!reload || reload.type !== 'reload')) {
+        ["../common/layout.html", "../common/menu.html", "../common/years.html"].forEach(function (url) {
+            var link = document.createElement('link');
+            link.rel = 'preload'; link.as = 'fetch'; link.crossOrigin = 'anonymous'; link.href = url;
+            document.head.appendChild(link);
+        });
+    }
+})();
+</script>
+<link rel="stylesheet" href="../wp-content/themes/assets/fonts/fontawesome/css/all.min9e0b.css?ver=5.15.1">
+<link rel="stylesheet" href="../wp-content/themes/assets/css/third/simple-line-icons.min8d5a.css?ver=2.4.0">
+<link rel="stylesheet" href="../wp-content/themes/assets/css/style.min0226.css?ver=3.1.2">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/team.css?ver=text-list-1">
+<script src="../assets/js/site.js?ver=html-components-3" defer></script>
+
 <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 <title>TrustML Team : TrustML Young Scientist Seminars</title>
 <link rel="canonical" href="index.html" />
@@ -29,44 +52,43 @@
 
 <section id="advisory-board" class="team-section">
 <h2>Advisory Board</h2>
-<div class="team-grid advisory-grid">
-<div class='block'><img src="../pic/Sugiyama.jpg" class="round_icon"/><h2><a rel="noreferrer noopener" aria-label="Prof. Masashi Sugiyama (opens in a new tab)" href="http://www.ms.k.u-tokyo.ac.jp/sugi/" target="_blank">Prof. Masashi Sugiyama</a> <font size='3'> (RIKEN-AIP/The University of Tokyo)</font></h2></div>
+<ul class="team-list">
+<li>Prof. Masashi Sugiyama, RIKEN-AIP/The University of Tokyo</li>
 
-<div class='block'><img src="https://niug1984.github.io/May2019.jpg" class="round_icon"/><h2><a rel="noreferrer noopener" aria-label="Dr. Gang Niu (opens in a new tab)" href="https://niug1984.github.io/" target="_blank">Dr. Gang Niu</a> <font size='3'> (RIKEN-AIP)</font></h2></div>
+<li>Dr. Gang Niu, RIKEN-AIP</li>
 
-<div class='block'><img src="../pic/bohan.png" class="round_icon"/><h2><a rel="noreferrer noopener" aria-label="Dr. Bo Han (opens in a new tab)" href="https://bhanml.github.io/" target="_blank">Dr. Bo Han</a> <font size='3'> (HKBU)</font></h2></div>
+<li>Dr. Bo Han, HKBU</li>
 
-<div class='block'><img src="../pic/tongliang.jpg" class="round_icon"/><h2><a rel="noreferrer noopener" aria-label="Dr. Tongliang Liu (opens in a new tab)" href="https://tongliang-liu.github.io/" target="_blank">Dr. Tongliang Liu</a> <font size='3'> (USYD)</font></h2></div>
-</div>
+<li>Dr. Tongliang Liu, USYD</li>
+</ul>
 </section>
 
 <section id="executive-group" class="team-section">
 <h2>Executive Group</h2>
-<div class="team-grid executive-grid">
-<div class='block'><img src="../pic/zhangjf.jpeg" class="round_icon"/><h2><a rel="noreferrer noopener" aria-label="Dr. Jingfeng Zhang (opens in a new tab)" href="https://zjfheart.github.io/" target="_blank">Jingfeng Zhang</a> <font size='3'> (Fudan University/RIKEN-AIP)</font></h2></div>
+<ul class="team-list">
+<li>Jingfeng Zhang, Fudan University/RIKEN-AIP</li>
 
-<div class='block'><img src="https://fengliu90.github.io/Feng_Liu.png" class="round_icon"/><h2><a rel="noreferrer noopener" aria-label="Dr. Feng Liu (opens in a new tab)" href="https://fengliu90.github.io/" target="_blank">Feng Liu</a> <font size='3'> (The University of Melbourne/RIKEN-AIP)</font></h2></div>
+<li>Feng Liu, The University of Melbourne/RIKEN-AIP</li>
 
-<!--<div class='block'><img src="../pic/Jianing.jpg" class="round_icon"/><h2><a rel="noreferrer noopener" aria-label="Dr. Jianing Zhu (opens in a new tab)" href="https://zfancy.github.io/" target="_blank">Jianing Zhu</a> <font size='3'> (UT Austin) </font></h2></div>-->
+<!--<li>Jianing Zhu, UT Austin</li>-->
 
-<div class='block'><img src="../pic/lshida.jpg" class="round_icon"/><h2><a rel="noreferrer noopener" aria-label="Dr. Takashi Ishida (opens in a new tab)" href="https://takashiishida.github.io/" target="_blank">Takashi Ishida</a> <font size='3'> (The University of Tokyo)</font></h2></div>
+<li>Takashi Ishida, The University of Tokyo</li>
 
-<!--<div class='block'><img src="../pic/xuxilie.png" class="round_icon"/><h2><a rel="noreferrer noopener" aria-label="Dr. Xilie Xu (opens in a new tab)" href="https://godxuxilie.github.io/" target="_blank">Xilie Xu</a> <font size='3'> (Baiont Quant) </font></h2></div>-->
+<!--<li>Xilie Xu, Baiont Quant</li>-->
 
-<!--<div class='block'><img src="../pic/salah.jpeg" class="round_icon"/><h2><a rel="noreferrer noopener" aria-label="Dr. Salah Ghamizi (opens in a new tab)" href="https://wwwen.uni.lu/recherche/fstm/dcs/members/salah_ghamizi" target="_blank">Salah Ghamizi</a><font size='3'> (University of Luxembourg)</font></h2></div>-->
+<!--<li>Salah Ghamizi, University of Luxembourg</li>-->
 
-<div class='block'><img src="../pic/okan.jpeg" class="round_icon"/><h2><a rel="noreferrer noopener" aria-label="Dr. Okan Koc (opens in a new tab)" href="https://scholar.google.de/citations?user=Nhol8b8AAAAJ&hl=en" target="_blank">Okan Koc</a><font size='3'> (RIKEN AIP)</font></h2></div>
+<li>Okan Koc, RIKEN AIP</li>
 
-<div class='block'><img src="../pic/shuo.jpg" class="round_icon"/><h2><a rel="noreferrer noopener" aria-label="Dr. Shuo Chen (opens in a new tab)" href="https://sites.google.com/view/shuochen/" target="_blank">Shuo Chen</a><font size='3'> (Nanjing University/RIKEN AIP)</font></h2></div>
+<li>Shuo Chen, Nanjing University/RIKEN AIP</li>
 
-<div class='block'><img src="../pic/zhangzhenyu.png" class="round_icon"/><h2><a rel="noreferrer noopener" aria-label="Dr. Zhen-Yu Zhang (opens in a new tab)" href="https://zhangzy07.github.io/" target="_blank">Zhen-Yu Zhang</a><font size='3'> (RIKEN AIP)</font></h2></div>
-</div>
+<li>Zhen-Yu Zhang, RIKEN AIP</li>
+</ul>
 </section>
 
 	
 </div>
 
 </div>
-<script src="../assets/js/site.js?ver=html-components-2" defer></script>
 </body>
 </html>
