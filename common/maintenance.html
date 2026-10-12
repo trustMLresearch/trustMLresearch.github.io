@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrustML 网站维护说明</title>
+  <style>
+    body { max-width: 900px; margin: 40px auto; padding: 0 24px; font: 16px/1.8 system-ui, sans-serif; color: #222; }
+    h1, h2 { color: #0a2d79; }
+    code, pre { background: #f2f4f7; }
+    code { padding: 2px 5px; }
+    pre { padding: 16px; overflow: auto; }
+    table { border-collapse: collapse; width: 100%; }
+    td, th { border: 1px solid #ddd; padding: 10px; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>日常只编辑 HTML</h1>
+  <p>保存修改，再像以前一样上传或提交到网站，然后刷新网页。公共框架由浏览器自动加载，不需要 Python、配置文件或生成命令。</p>
+  <table>
+    <tr><th>修改内容</th><th>直接编辑的 HTML</th></tr>
+    <tr><td>电脑和手机主菜单</td><td><code>common/menu.html</code></td></tr>
+    <tr><td>年份菜单</td><td><code>common/years.html</code></td></tr>
+    <tr><td>网站名称、公共页头、页面框架和页脚</td><td><code>common/layout.html</code></td></tr>
+    <tr><td>首页资助信息、免责声明和新闻</td><td><code>common/home-footer.html</code></td></tr>
+    <tr><td>讲座正文、照片链接、讲者介绍和摘要</td><td><code>seminar-talks/对应文件.html</code></td></tr>
+    <tr><td>年份表格、团队成员和其他页面正文</td><td>直接编辑原网址对应的 <code>index.html</code></td></tr>
+  </table>
+  <p>公共 HTML 的 head 中已有自动加载脚本，保留这些行即可；日常修改 body 中的菜单、年份或页脚内容。</p>
+  <h2>菜单链接怎么写</h2>
+  <p>公共文件中的链接以网站根目录为基准，不用区分首页、talk 页面或年份页面的文件夹深度。例如在年份列表中加入：</p>
+  <pre>&lt;li&gt;&lt;a href="online-seminar-series/2027-Jan-Dec/index.html"&gt;Jan-Dec 2027&lt;/a&gt;&lt;/li&gt;</pre>
+  <p>先创建对应的年份页面，再加入该链接。电脑和手机菜单都会使用同一份列表。</p>
+  <h2>新增 Talk</h2>
+  <ol>
+    <li>复制 <code>seminar-talks/</code> 下一个现有 HTML，使用新的文件名。</li>
+    <li>编辑其中 <code>page-content</code> 内的标题、照片、讲者介绍和摘要。</li>
+    <li>按原来的方式，在年份页面的表格中添加这场讲座的链接。</li>
+    <li>保存并上传或提交文件。无需登记 JSON，也无需生成网页。</li>
+  </ol>
+  <h2>页面标题和样式</h2>
+  <p><code>&lt;template id="page-heading"&gt;…&lt;/template&gt;</code> 是页面蓝色横条中的标题。浏览器标签标题仍由 HTML 的 <code>&lt;title&gt;</code> 控制。</p>
+  <p>现有样式保存在 <code>assets/css/</code>；加载哪些样式由 <code>common/layout.html</code> 控制。JavaScript 只负责自动加载和菜单交互，日常无需修改。</p>
+  <h2>预览方式</h2>
+  <p>可以直接双击本地 <code>index.html</code> 预览，也可以通过网站的 HTTP/HTTPS 地址查看。公共 HTML 会自动加载，日常不需要启动服务器或运行命令。请保留网站中的 <code>common</code>、<code>assets</code>、<code>wp-content</code> 和 <code>pic</code> 文件夹。</p>
+  <p>讲座信息没有集中成数据库，照片文件和图片质量没有修改，两个旧团队链接的跳转也保留。</p>
+</body>
+</html>

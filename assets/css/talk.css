@@ -1,0 +1,27 @@
+.block img {
+		float: left;
+		margin-left: 40px;
+		margin-right: 30px;
+		width: 170px; 
+		height: 200px;
+	}
+	.block p {
+		margin-right: 50px;
+		height: 130px;
+		line-height: 25px;
+		overflow: scroll;
+	}
+	.block h2 {
+		padding-top: 15px;
+	}
+	.round_icon{
+		width:50px;
+		height: 40px;
+		display: flex;
+		border-radius: 50%;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+	}
+
+.talk-photo-cover .round_icon { object-fit: cover; }
