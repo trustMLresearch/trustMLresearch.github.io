@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- Edit this HTML directly. The shared frame and menu load automatically. -->
+<html class="html" lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Load presentation before the page content can paint. -->
+<style>html.site-loading #page-content { visibility: hidden; }</style>
+<script>
+(function () {
+    document.documentElement.classList.add('site-loading');
+    window.siteLoadingGuard = setTimeout(function () { document.documentElement.classList.remove('site-loading'); }, 8000);
+    var reload = performance.getEntriesByType('navigation')[0];
+    if (/^https?:$/.test(location.protocol) && (!reload || reload.type !== 'reload')) {
+        ["../common/layout.html", "../common/menu.html", "../common/years.html"].forEach(function (url) {
+            var link = document.createElement('link');
+            link.rel = 'preload'; link.as = 'fetch'; link.crossOrigin = 'anonymous'; link.href = url;
+            document.head.appendChild(link);
+        });
+    }
+})();
+</script>
+<link rel="stylesheet" href="../wp-content/themes/assets/fonts/fontawesome/css/all.min9e0b.css?ver=5.15.1">
+<link rel="stylesheet" href="../wp-content/themes/assets/css/third/simple-line-icons.min8d5a.css?ver=2.4.0">
+<link rel="stylesheet" href="../wp-content/themes/assets/css/style.min0226.css?ver=3.1.2">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/talk.css">
+<script src="../assets/js/site.js?ver=html-components-3" defer></script>
+
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<title>Talk : TrustML Young Scientist Seminars</title>
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Talk : TrustML Young Scientist Seminars" />
+<meta property="og:description" content="Contact us : TrustML Young Scientist Seminars" />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="TrustML Young Scientist Seminars" />
+<meta property="article:modified_time" content="2021-12-22" />
+<meta property="og:image" content="https://www.riken.jp/apple-touch-icon.png" />
+<meta property="og:image:width" content="351" />
+<meta property="og:image:height" content="360" />
+<link rel="icon" href="https://www.riken.jp/apple-touch-icon.png" sizes="32x32" />
+<link rel="icon" href="https://www.riken.jp/apple-touch-icon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.riken.jp/apple-touch-icon.png" />
+<meta name="msapplication-TileImage" content="https://www.riken.jp/apple-touch-icon.png" />
+</head>
+<body data-rsssl=1 class="page-template-default page page-id-738 page-parent wp-embed-responsive tribe-no-js trust-theme dropdown-mobile default-breakpoint content-full-width content-max-width has-topbar" itemscope="itemscope" itemtype="https://schema.org/WebPage" data-site-style="talk">
+<template id="page-heading">Talk</template>
+<div id="page-content">
+
+	
+<div class="entry clr" itemprop="text">
+
+	
+	
+<p><center><font size='5'><strong>The Role of Curvature in Non-stationary Online Learning</strong></b></font></center></p>
+
+<br></br>
+
+<div class='block'><img src='../pic/yujie_zhang.png' class="round_icon" /><h2>Yu-Jie Zhang<font size='3'> (University of Washington)</font></h2><p class="nooverflow">Yu-Jie Zhang is an incoming Assistant Professor at the National University of Singapore. Previously, he was an IFDS Postdoctoral Scholar at the University of Washington, working with Kevin Jamieson, and a Postdoctoral Researcher at RIKEN AIP. He received his Ph.D. from the University of Tokyo under the supervision of Masashi Sugiyama. His research focuses on the mathematical foundations and algorithmic design of interactive learning, particularly online optimization, bandits, and reinforcement learning. His work, published in venues such as NeurIPS, ICML, and JMLR, explores how learning algorithms can adapt to uncertain environments with provable performance guarantees. </p></div>
+
+
+<br></br>
+
+<p><font size='4'><strong>Short Abstract:</strong> Online learning is about making decisions sequentially and improving them based on incoming feedback. In many such problems, the curvature of the loss function is known to enable substantially faster learning when the goal is to compete with the best fixed decision. But what happens when the best decision changes over time? In this talk, I will explore when and how curvature can accelerate learning in such non-stationary settings. We show that, with bounded gradients, curvature can accelerate learning on arbitrary bounded convex domains, without the out-of-domain predictions required by earlier studies. However, when gradients can be unbounded, as in classical online portfolio selection, the picture changes. We find that faster rates depend critically on the geometric structure of the changing comparators, particularly their position relative to the boundary. We establish these findings through rigorous dynamic regret analysis, introducing new mixability-based arguments to exploit loss curvature.</b></font></p>
+
+	
+</div>
+
+</div>
+</body>
+</html>
